@@ -1,17 +1,653 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NovaVision Lab</title>
-  <style>body{font-family:system-ui;margin:0;background:#eef6ff;color:#153c5d}main{max-width:720px;margin:72px auto;padding:32px;background:white;border-radius:18px}.tag{color:#1478b8;font-weight:700}</style>
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sistem Informasi - Beranda Resmi</title>
+<!-- Material Symbols & Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#d8e3fb",
+            "surface-container-high": "#dee8ff",
+            "inverse-surface": "#263143",
+            "sand-border": "#E6DEC8",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#ffdbcf",
+            "on-background": "#111c2d",
+            "warm-ivory": "#FBF9F5",
+            "on-secondary-container": "#6f2000",
+            "on-error-container": "#93000a",
+            "surface-bright": "#f9f9ff",
+            "on-secondary-fixed-variant": "#822801",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "secondary": "#a23e18",
+            "surface-dim": "#cfdaf2",
+            "on-tertiary-fixed": "#2f1500",
+            "sand-surface": "#F3EFE6",
+            "charcoal-muted": "#475569",
+            "secondary-container": "#fe8357",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#424843",
+            "surface-container-highest": "#d8e3fb",
+            "tertiary": "#351800",
+            "primary-fixed-dim": "#abcfb8",
+            "on-tertiary-container": "#ea841a",
+            "surface-container-low": "#f0f3ff",
+            "deep-forest-dark": "#122B1F",
+            "background": "#f9f9ff",
+            "secondary-fixed-dim": "#ffb59c",
+            "surface-container": "#e7eeff",
+            "outline": "#727973",
+            "on-surface": "#111c2d",
+            "on-primary": "#ffffff",
+            "primary": "#032517",
+            "surface-tint": "#456553",
+            "on-primary-fixed-variant": "#2d4d3c",
+            "surface": "#f9f9ff",
+            "outline-variant": "#c1c8c2",
+            "on-primary-container": "#83a590",
+            "primary-fixed": "#c7ebd4",
+            "tertiary-container": "#542a00",
+            "tertiary-fixed": "#ffdcc3",
+            "primary-container": "#1b3b2b",
+            "inverse-primary": "#abcfb8",
+            "inverse-on-surface": "#ecf1ff",
+            "on-secondary-fixed": "#390c00",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#002113",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "gutter-sm": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-md": "2.5rem",
+            "margin-lg": "5rem",
+            "gutter": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "label-md": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "title-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      background-color: #FBF9F5;
+      color: #032517;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
 </head>
-<body>
-  <main>
-    <p class="tag">MLOps Lab · Frontend</p>
-    <h1>Halo dari GitHub Pages!</h1>
-    <p>Halaman ini dikirim otomatis oleh GitHub Actions.</p>
-    <p>Perubahan kode → commit → push → deploy.</p>
-  </main>
-</body>
-</html>
+<body class="bg-warm-ivory text-primary selection:bg-secondary-fixed selection:text-primary">
+<!-- TOP APP BAR (from Shared Components JSON) -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-margin py-space-sm w-full max-w-7xl mx-auto bg-warm-ivory dark:bg-deep-forest-dark shadow-sm dark:shadow-none">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-sand-surface flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-title-md font-title-md text-primary dark:text-warm-ivory tracking-tight">Sistem Informasi</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FEF3C7] text-[#92400E]">
+            Akreditasi Unggul BAN-PT
+          </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Buka Menu" class="p-2 rounded-lg text-primary dark:text-warm-ivory hover:bg-sand-surface dark:hover:bg-primary-container transition-colors duration-200 active:scale-95" id="open-drawer-btn">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- NAVIGATION DRAWER OVERLAY & COMPONENT (from Shared Components JSON) -->
+<div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0" id="drawer-backdrop"></div>
+<aside class="fixed inset-y-0 right-0 z-50 flex flex-col p-margin-md max-w-xs w-full bg-warm-ivory dark:bg-deep-forest-dark shadow-lg dark:shadow-none transform translate-x-full transition-transform duration-300 ease-in-out" id="nav-drawer">
+<div class="flex items-center justify-between pb-space-md border-b border-sand-border">
+<span class="text-headline-sm font-headline-sm text-primary dark:text-warm-ivory">Sistem Informasi</span>
+<button class="p-1 rounded-lg text-charcoal-muted hover:text-primary active:scale-95" id="close-drawer-btn">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-space-xs mt-space-md flex-1 overflow-y-auto">
+<!-- Active Tab: Beranda -->
+<a class="flex items-center gap-space-sm text-primary dark:text-warm-ivory font-label-md bg-sand-surface dark:bg-primary-container rounded-lg px-space-md py-space-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span>Beranda</span>
+</a>
+<!-- Inactive items -->
+<a class="flex items-center gap-space-sm text-charcoal-muted dark:text-outline-variant font-label-md px-space-md py-space-sm hover:bg-sand-surface rounded-lg transition-colors" href="#keunggulan">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Kurikulum &amp; Jalur</span>
+</a>
+<a class="flex items-center gap-space-sm text-charcoal-muted dark:text-outline-variant font-label-md px-space-md py-space-sm hover:bg-sand-surface rounded-lg transition-colors" href="#keunggulan">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span>Keunggulan &amp; Sertifikasi</span>
+</a>
+<a class="flex items-center gap-space-sm text-charcoal-muted dark:text-outline-variant font-label-md px-space-md py-space-sm hover:bg-sand-surface rounded-lg transition-colors" href="#beasiswa">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span>Beasiswa &amp; Fast-Track</span>
+</a>
+<a class="flex items-center gap-space-sm text-charcoal-muted dark:text-outline-variant font-label-md px-space-md py-space-sm hover:bg-sand-surface rounded-lg transition-colors" href="#pmb">
+<span class="material-symbols-outlined" data-icon="app_registration">app_registration</span>
+<span>Pendaftaran PMB</span>
+</a>
+</nav>
+<div class="pt-space-md border-t border-sand-border text-center">
+<span class="text-label-sm font-label-sm text-charcoal-muted">PMB TA 2026/2027 Dibuka</span>
+</div>
+</aside>
+<!-- MAIN CANVAS -->
+<main class="w-full max-w-7xl mx-auto pb-24 md:pb-12 overflow-x-hidden">
+<!-- 1. HERO SECTION -->
+<section class="px-margin pt-space-md pb-space-xl">
+<div class="flex flex-col gap-space-md">
+<!-- Status Pill -->
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#E8EFEA] border border-primary/10">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-primary tracking-wide">Penerimaan Mahasiswa Baru 2026/2027</span>
+</div>
+<!-- Headline & Subtitle -->
+<div class="space-y-space-sm">
+<h1 class="text-display-hero-mobile font-display-hero-mobile md:text-display-hero md:font-display-hero text-primary tracking-tight">
+            Membentuk Pemimpin Teknologi &amp; Transformasi Digital Masa Depan
+          </h1>
+<p class="text-body-md font-body-md text-charcoal-muted max-w-2xl leading-relaxed">
+            Program studi yang memadukan keunggulan manajemen bisnis, rekayasa data &amp; AI, serta inovasi enterprise modern untuk mencetak talenta global siap kerja.
+          </p>
+</div>
+<!-- Dual CTA -->
+<div class="flex flex-col sm:flex-row gap-space-sm pt-space-xs">
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#C85A32] text-warm-ivory text-label-md font-label-md shadow-sm hover:bg-[#B24F2C] transition-transform active:scale-95 text-center" href="#pmb">
+            Daftar PMB 2026
+            <span class="material-symbols-outlined ml-2 text-base" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg border-[1.5px] border-primary text-primary text-label-md font-label-md hover:bg-sand-surface transition-colors active:scale-95 text-center" href="#keunggulan">
+            Lihat Kurikulum
+          </a>
+</div>
+<!-- Hero Visual Bento with Floating Stat Pills -->
+<div class="relative mt-space-md rounded-2xl overflow-hidden border border-sand-border shadow-sm">
+<img class="w-full h-80 sm:h-96 object-cover" data-alt="A group of ambitious Southeast Asian university students in modern smart casual attire working together inside a sunlit architectural university innovation hub. Warm ivory interiors, green indoor botanicals, and high-tech glass displays creating a prestigious academic atmosphere. High-key natural lighting, cinematic warm tone photography, sharp focus on laptops and collaborative sketches." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtF2G8BJ409fVUnCgbkSh4ZhI3sYREjF5vRMPruR9_x8J8kpVgtVD2xdSIpf5dwjH9rg4hyBmLzaHq1MFecT1cQgEsFHzs3VCRcaz4F2evkhv1qfBNYK5idQMPKDFQ6kET1t0G-TUV21RiIL42VtiaHKi4RgWdlWarTgGQBpEBpGhyFX-k3GIO4wPThYc7DbTG6cg7pf86zbpUFTtgk_O03YmuRUuuPUNLaftGXavYBxh9d3quZKW5Dw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<!-- Floating Stats Overlay -->
+<div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2.5">
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-warm-ivory/95 backdrop-blur-md border border-sand-border shadow-md">
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+<div>
+<div class="text-title-sm font-title-sm text-primary leading-tight">96%</div>
+<div class="text-label-sm font-label-sm text-charcoal-muted">Serapan Karier &lt; 3 Bln</div>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-warm-ivory/95 backdrop-blur-md border border-sand-border shadow-md">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+<div>
+<div class="text-title-sm font-title-sm text-primary leading-tight">40+</div>
+<div class="text-label-sm font-label-sm text-charcoal-muted">Mitra Industri Global</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. SECTION 4 KEUNGGULAN PRODI (Bento Grid) -->
+<section class="px-margin py-space-xl bg-sand-surface/60 rounded-3xl mx-margin my-space-md border border-sand-border" id="keunggulan">
+<div class="flex flex-col gap-space-sm mb-space-lg text-left">
+<span class="text-label-sm font-label-sm text-secondary tracking-wider uppercase">Nilai Diferensiasi</span>
+<h2 class="text-headline-md font-headline-md text-primary">Keunggulan Strategis Program Studi</h2>
+<p class="text-body-sm font-body-sm text-charcoal-muted">Dirancang selaras dengan lompatan ekosistem teknologi dunia kerja.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-sm">
+<!-- Feature Card 1 -->
+<div class="bg-warm-ivory p-space-lg rounded-[1.25rem] border border-sand-border hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-2xl" data-icon="terminal">terminal</span>
+</div>
+<h3 class="text-title-md font-title-md text-primary mb-1">Kurikulum Industri &amp; AI</h3>
+<p class="text-body-sm font-body-sm text-charcoal-muted leading-relaxed">
+              Disusun berstandar internasional ACM/AIS dengan fokus computational thinking, arsitektur cloud terdistribusi, serta rekayasa artificial intelligence terapan.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-sand-border/70 flex items-center gap-1.5 text-label-sm font-label-sm text-primary">
+<span>ACM/AIS Aligned</span>
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-warm-ivory p-space-lg rounded-[1.25rem] border border-sand-border hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-2xl" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="text-title-md font-title-md text-primary mb-1">Sertifikasi Internasional</h3>
+<p class="text-body-sm font-body-sm text-charcoal-muted leading-relaxed">
+              Program sertifikasi bersubsidi penuh mencakup AWS Cloud Practitioner, Cisco CCNA, Scrum Master Professional, hingga Oracle Database Associate.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-sand-border/70 flex items-center gap-1.5 text-label-sm font-label-sm text-primary">
+<span>Free Exam Voucher</span>
+<span class="material-symbols-outlined text-sm" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-warm-ivory p-space-lg rounded-[1.25rem] border border-sand-border hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-2xl" data-icon="groups">groups</span>
+</div>
+<h3 class="text-title-md font-title-md text-primary mb-1">Dosen Praktisi &amp; Pakar</h3>
+<p class="text-body-sm font-body-sm text-charcoal-muted leading-relaxed">
+              Sinergi akademisi berkualifikasi doktor (Ph.D) bersama C-level &amp; Principal Architect dari decacorn tech untuk pengajaran berbasis studi kasus riil.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-sand-border/70 flex items-center gap-1.5 text-label-sm font-label-sm text-primary">
+<span>80% Praktisi Industri</span>
+<span class="material-symbols-outlined text-sm" data-icon="psychology">psychology</span>
+</div>
+</div>
+<!-- Feature Card 4 -->
+<div class="bg-warm-ivory p-space-lg rounded-[1.25rem] border border-sand-border hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-2xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h3 class="text-title-md font-title-md text-primary mb-1">Jalur Karier Strategis</h3>
+<p class="text-body-sm font-body-sm text-charcoal-muted leading-relaxed">
+              Program Magang 20 SKS di top-tier tech firm, inkubator startup modal ventura kampus, dan bimbingan portofolio karier sejak semester 4.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-sand-border/70 flex items-center gap-1.5 text-label-sm font-label-sm text-primary">
+<span>Direct Campus Hiring</span>
+<span class="material-symbols-outlined text-sm" data-icon="domain_verification">domain_verification</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. DARK HIGHLIGHT SECTION (Institutional Rigor & Flagship Pathways) -->
+<section class="px-margin py-space-xl" id="beasiswa">
+<div class="bg-deep-forest-dark text-warm-ivory rounded-3xl p-space-lg md:p-space-xl relative overflow-hidden shadow-xl">
+<!-- Subtle ambient radial glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-primary/40 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-white/10 text-secondary-fixed text-label-sm font-label-sm border border-white/10">
+<span class="material-symbols-outlined text-sm" data-icon="stars">stars</span>
+            Flagship Academic Acceleration
+          </div>
+<h2 class="text-headline-md font-headline-md text-warm-ivory tracking-tight">
+            Program Unggulan Fast-Track S1+S2 &amp; Beasiswa Prestasi 100%
+          </h2>
+<p class="text-body-md font-body-md text-surface-variant/90 leading-relaxed">
+            Raih gelar Sarjana Komputer (S.Kom) dan Magister Sistem Informasi (M.Kom) hanya dalam 5 tahun. Tersedia skema beasiswa penuh bebas SPP bagi calon mahasiswa berprestasi akademik dan kejuaraan teknologi.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm my-space-xs">
+<div class="p-space-md rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+<div class="flex items-center gap-2 text-secondary-fixed font-title-sm text-title-sm mb-1">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+                5 Tahun S1 + S2
+              </div>
+<p class="text-body-sm font-body-sm text-outline-variant">
+                Efisiensi biaya dan waktu studi dengan riset terintegrasi bersama mitra universitas ternama di Australia dan Taiwan.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+<div class="flex items-center gap-2 text-secondary-fixed font-title-sm text-title-sm mb-1">
+<span class="material-symbols-outlined" data-icon="redeem">redeem</span>
+                Beasiswa Early Bird
+              </div>
+<p class="text-body-sm font-body-sm text-outline-variant">
+                Pembebasan uang gedung (DPK) 100% khusus 50 pendaftar pertama jalur rapor gelombang I.
+              </p>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-secondary-fixed text-primary text-label-md font-label-md font-semibold hover:bg-white transition-colors active:scale-95 shadow-sm" href="#pmb">
+              Pelajari Beasiswa
+              <span class="material-symbols-outlined ml-2 text-base" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. BERITA & AGENDA TERKINI (Editorial Rounded Cards) -->
+<section class="px-margin py-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Kabar Kampus</span>
+<h2 class="text-headline-md font-headline-md text-primary">Berita &amp; Agenda Terkini</h2>
+</div>
+<a class="hidden sm:inline-flex items-center gap-1 text-label-md font-label-md text-primary hover:text-secondary" href="#">
+          Semua Berita <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-sm">
+<!-- News Card 1 -->
+<article class="bg-sand-surface rounded-2xl overflow-hidden border border-sand-border flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An Indonesian university student team presenting their winning digital user experience prototype on an elegant stage with modern academic branding banners in background. Confident posture, holding an award trophy, dressed in academic blazers. Editorial warm cinematic light, soft foreground, high resolution professional journalism style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBYohXHG0vu7fwqLAS5P2D_G3igsb6kCBPi4Vz7ii0eOyYYV2CnuDKYFyqXyxcu6g5tMkIIRs5A275jcSnvOlsdwHSNP997lpSAzRMFAdfIcwD55xjkYcRoUqVxS9IMFC3KjMbzlUv1DSDQbcnJ7hMDto_uZWHdRaXdRimER02BjC3L4Gcvq5pWupYJQhQpV1tfFph0XgrFbMr3FtiSWFshRaZxuYC7kJQhVVJem-vzPp4LIaaVyyLpQ"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-warm-ivory text-primary text-label-sm font-label-sm shadow-sm">
+              Prestasi Mahasiswa
+            </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between">
+<div class="space-y-1.5">
+<span class="text-label-sm font-label-sm text-charcoal-muted">14 Oktober 2026</span>
+<h3 class="text-title-md font-title-md text-primary group-hover:text-secondary transition-colors">
+                Prestasi Juara 1 UI/UX Nasional: Solusi FinTech Inklusif Mahasiswa SI
+              </h3>
+<p class="text-body-sm font-body-sm text-charcoal-muted">
+                Mengungguli 120 universitas terkemuka dengan gagasan antarmuka perbankan mikro ramah disabilitas berbasis AI Voice Assistant.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1 text-label-md font-label-md text-primary">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</article>
+<!-- News Card 2 -->
+<article class="bg-sand-surface rounded-2xl overflow-hidden border border-sand-border flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A grand university lecture hall with an expert speaker standing at a podium delivering an enterprise cloud architecture seminar. Large presentation screen showing cloud infrastructure diagrams. Attentive young adult students taking notes on laptops in a warm ivory and dark oak auditorium. Prestigious academic seminar photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJu--dWxRI0U6G8KPRVVpGoWGVfDWHAPq02HLF0zJAF7Ffy9YQ6YOIG0IIKoRS2ICHGEYQw5ypkCFHWUbFDpdHOnpi9auw1DGro3adbKn0v5D6i-FZnKDJNSWEntqDBfafpcAsp3MbzsRl1_z3QePYLpaTiEXq02YzL52f_5sQrIxTftqY3MCuteLm3tTnTY3u5UNN81HRS6QFCFMZeNy7NTXwqkSqg-e4V9qnF5WQiXkOzjshCnABRw"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-warm-ivory text-primary text-label-sm font-label-sm shadow-sm">
+              Kuliah Tamu &amp; Workshop
+            </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between">
+<div class="space-y-1.5">
+<span class="text-label-sm font-label-sm text-charcoal-muted">28 September 2026</span>
+<h3 class="text-title-md font-title-md text-primary group-hover:text-secondary transition-colors">
+                Kuliah Tamu: Arsitektur Cloud Enterprise Bersama VP of Technology
+              </h3>
+<p class="text-body-sm font-body-sm text-charcoal-muted">
+                Membahas strategi skalabilitas data miliaran transaksi per hari serta mitigasi kegagalan pada infrastruktur perbankan modern.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1 text-label-md font-label-md text-primary">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 5. TESTIMONI ALUMNI (Prestigious Proof) -->
+<section class="px-margin py-space-xl">
+<div class="bg-warm-ivory border border-sand-border rounded-3xl p-space-lg md:p-space-xl">
+<div class="text-center max-w-xl mx-auto mb-space-lg">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Jejak Alumni</span>
+<h2 class="text-headline-md font-headline-md text-primary mt-1">Kiprah Nyata di Industri Global</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Testimonial 1 -->
+<div class="bg-sand-surface p-space-md md:p-space-lg rounded-2xl border border-sand-border flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex text-[#FE8357]">
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-md font-body-md text-primary italic leading-relaxed">
+                "Kombinasi kurikulum teknologi dan pemahaman proses bisnis di prodi ini memberi pondasi kuat saat memimpin tim lintas disiplin engineer di perusahaan teknologi unicorn."
+              </p>
+</div>
+<div class="flex items-center gap-3 mt-space-md pt-space-sm border-t border-sand-border">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-sand-border">
+<img class="w-full h-full object-cover" data-alt="Close up professional editorial headshot portrait of an Indonesian female tech professional with confident, warm expression in an ultra-modern startup office. Natural lighting, dressed in smart casual blazer, soft blurred background with modern computer monitors and warm wooden textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMRADyn9sOdteDO9fnjP9e-hcU7wdcqg4YSJeFMlAkFjmJmeFv0z4LFONIRe2yrPGXXAuAx_2K_wBMwb2Y51fB6sr8nNIq3TBLpx5OQRqD_WkfsPVW7NqzeFgnwfC7sCL1MRFxmASz4ewxIlQyVhsGN9uwnKvQvyemtTFaPya5FEN5gCYauhozjWUN9SnFI0T9X_nrTPeI76KobDnDRQD4-BUve_rKvn2qfafLMtrQYVsppJSz_X-Bdg"/>
+</div>
+<div>
+<h4 class="text-title-sm font-title-sm text-primary">Anindya Larasati, S.Kom</h4>
+<p class="text-body-sm font-body-sm text-charcoal-muted">Lead Product Manager di Unicorn Tech (Alumni 2021)</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-sand-surface p-space-md md:p-space-lg rounded-2xl border border-sand-border flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex text-[#FE8357]">
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-md font-body-md text-primary italic leading-relaxed">
+                "Sertifikasi AWS dan bimbingan lab rekayasa data saat kuliah menjadi tiket emas saya langsung direkrut perbankan internasional bahkan sebelum wisuda."
+              </p>
+</div>
+<div class="flex items-center gap-3 mt-space-md pt-space-sm border-t border-sand-border">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-sand-border">
+<img class="w-full h-full object-cover" data-alt="Editorial portrait headshot of a young Southeast Asian male data engineer wearing glasses and tailored dark green polo in an international corporate banking headquarters. Clean architectural background, warm ivory and slate ambiance, confident friendly smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_O_SQQq9NQOFpq6h1nnT3qIJCsu1gfpa80fojwBNGJXojgntpWWycDdlcwdYmTJvIaTdwqRzvqn_CYtN6o-c1mezhtanB8VgLD0VRfMR5Q-3uf5LfPaZj6bbQcsMQcbQrcmqmzDUBs8nnNvNCjLZO3wc2fURelz01zCPt5rHqHhiiWnHALOeiz9LwitasnDuCFuy4dNrpIkEXoik2M2uSqdaFY1gpXxOovn2lTG7ik-wDAA_o3IDeTg"/>
+</div>
+<div>
+<h4 class="text-title-sm font-title-sm text-primary">Reza Firmansyah, S.Kom</h4>
+<p class="text-body-sm font-body-sm text-charcoal-muted">Senior Data Engineer di Global Banking Corp (Alumni 2020)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. SECTION CALL TO ACTION PENDAFTARAN (PMB) -->
+<section class="px-margin py-space-xl" id="pmb">
+<div class="bg-gradient-to-br from-sand-surface to-warm-ivory border-2 border-secondary/20 rounded-3xl p-space-lg md:p-space-xl shadow-sm">
+<div class="max-w-xl mx-auto text-center space-y-space-sm">
+<div class="w-12 h-12 rounded-full bg-secondary/10 text-secondary mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="how_to_reg">how_to_reg</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-primary">Siap Melangkah Menjadi Arsitek Digital?</h2>
+<p class="text-body-md font-body-md text-charcoal-muted">
+            Konsultasikan minat karier, silabus, dan peluang beasiswa bersama konselor akademik PMB kami sekarang.
+          </p>
+<!-- Interactive Consultation Quick Form -->
+<form class="mt-space-md space-y-space-sm text-left max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Terima kasih! Tim Admisi Sistem Informasi akan segera menghubungi Anda melalui WhatsApp.');">
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">Nama Lengkap Calon Mahasiswa</label>
+<input class="w-full h-12 px-4 rounded-lg bg-warm-ivory border-[1.5px] border-sand-border text-primary focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm" placeholder="cth. Bagas Pratama" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">Nomor WhatsApp Aktif</label>
+<input class="w-full h-12 px-4 rounded-lg bg-warm-ivory border-[1.5px] border-sand-border text-primary focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm" placeholder="0812-xxxx-xxxx" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">Peminatan Karier</label>
+<select class="w-full h-12 px-4 rounded-lg bg-warm-ivory border-[1.5px] border-sand-border text-primary focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm">
+<option>Data Engineering &amp; Business Intelligence</option>
+<option>Enterprise Cloud &amp; Cybersecurity Architecture</option>
+<option>Digital Product Management &amp; IT Consulting</option>
+<option>Program Fast-Track S1+S2</option>
+</select>
+</div>
+<div class="pt-space-xs flex flex-col gap-2.5">
+<button class="w-full py-3.5 rounded-lg bg-[#C85A32] text-warm-ivory text-label-md font-label-md hover:bg-[#B24F2C] transition-colors active:scale-98 text-center font-semibold shadow-sm" type="submit">
+                Kirim Formulir Konsultasi
+              </button>
+<a class="w-full py-3 rounded-lg border-[1.5px] border-[#1B3B2B] text-primary flex items-center justify-center gap-2 text-label-md font-label-md hover:bg-sand-surface transition-colors active:scale-98" href="https://wa.me/6281234567890?text=Halo%20Admisi%20Sistem%20Informasi,%20saya%20ingin%20tanya%20terkait%20PMB%202026" target="_blank">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+                Tanya Admisi PMB via WhatsApp
+              </a>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (from Shared Components JSON) -->
+<footer class="bg-deep-forest-dark dark:bg-surface-container-lowest text-warm-ivory dark:text-primary transition-colors">
+<div class="w-full px-margin py-margin-md flex flex-col gap-space-lg max-w-7xl mx-auto">
+<!-- Top Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg">
+<!-- Brand Info -->
+<div class="md:col-span-2 space-y-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl" data-icon="school">school</span>
+<span class="text-title-md font-title-md text-warm-ivory dark:text-primary">Program Studi Sistem Informasi</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline-variant max-w-sm leading-relaxed">
+            Fakultas Teknologi Informasi &amp; Industri Digital. Mencetak lulusan kompeten yang adaptif terhadap dinamika transformasi digital global.
+          </p>
+<div class="text-body-sm font-body-sm text-outline-variant space-y-1 pt-1">
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+              Gedung BJ Habibie Lt. 3, Kampus Terpadu
+            </p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+              Layanan Akademik: Senin - Jumat (08.00 - 16.00 WIB)
+            </p>
+</div>
+</div>
+<!-- Academic Links (Exact from JSON) -->
+<div>
+<h4 class="text-title-sm font-title-sm text-warm-ivory dark:text-primary mb-space-sm">Navigasi Utama</h4>
+<ul class="space-y-2">
+<li><a class="text-outline-variant dark:text-charcoal-muted font-body-sm hover:text-secondary-fixed transition-colors" href="#">Panduan Akademik</a></li>
+<li><a class="text-outline-variant dark:text-charcoal-muted font-body-sm hover:text-secondary-fixed transition-colors" href="#">Akreditasi &amp; Mutu</a></li>
+<li><a class="text-outline-variant dark:text-charcoal-muted font-body-sm hover:text-secondary-fixed transition-colors" href="#">Pusat Karir &amp; Alumni</a></li>
+<li><a class="text-outline-variant dark:text-charcoal-muted font-body-sm hover:text-secondary-fixed transition-colors" href="#">Kebijakan Privasi</a></li>
+<li><a class="text-outline-variant dark:text-charcoal-muted font-body-sm hover:text-secondary-fixed transition-colors" href="#">Kontak &amp; PMB</a></li>
+</ul>
+</div>
+<!-- Social & Accreditation Badge -->
+<div class="space-y-space-sm">
+<h4 class="text-title-sm font-title-sm text-warm-ivory dark:text-primary">Terakreditasi Unggul</h4>
+<div class="p-space-sm rounded-xl bg-white/5 border border-white/10 text-body-sm font-body-sm text-outline-variant">
+            SK BAN-PT No. 4920/SK/BAN-PT/Akred/S/VIII/2024
+          </div>
+<div class="flex items-center gap-3 pt-2 text-warm-ivory">
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="public">public</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="alternate_email">alternate_email</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Copyright Bottom Bar -->
+<div class="pt-space-md border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-label-sm font-label-sm text-outline-variant">
+<span>© 2024 Program Studi Sistem Informasi. Hak Cipta Dilindungi.</span>
+<span class="mt-2 sm:mt-0">Kemendikbudristek RI</span>
+</div>
+</div>
+</footer>
+<!-- BOTTOM NAVIGATION BAR (from Shared Components JSON: Mobile Destination Only) -->
+<!-- Responsive Pivot: On MOBILE (md:hidden) use BottomNavBar. On WEB (hidden md:flex) hide BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-sm py-space-xs pb-safe bg-warm-ivory dark:bg-deep-forest-dark shadow-md dark:shadow-none">
+<!-- Tab 1: Beranda (Active: Exactly matching homepage context) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-warm-ivory font-label-sm py-space-xs" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">Beranda</span>
+</a>
+<!-- Tab 2: Kurikulum -->
+<a class="flex flex-col items-center justify-center text-charcoal-muted dark:text-outline-variant font-label-sm py-space-xs" href="#keunggulan">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="text-label-sm font-label-sm mt-0.5">Kurikulum</span>
+</a>
+<!-- Tab 3: Beasiswa -->
+<a class="flex flex-col items-center justify-center text-charcoal-muted dark:text-outline-variant font-label-sm py-space-xs" href="#beasiswa">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="text-label-sm font-label-sm mt-0.5">Beasiswa</span>
+</a>
+<!-- Tab 4: PMB -->
+<a class="flex flex-col items-center justify-center text-charcoal-muted dark:text-outline-variant font-label-sm py-space-xs" href="#pmb">
+<span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span>
+<span class="text-label-sm font-label-sm mt-0.5">PMB</span>
+</a>
+</nav>
+<!-- Interactive Drawer Script -->
+<script>
+    const openBtn = document.getElementById('open-drawer-btn');
+    const closeBtn = document.getElementById('close-drawer-btn');
+    const drawer = document.getElementById('nav-drawer');
+    const backdrop = document.getElementById('drawer-backdrop');
+
+    function openNav() {
+      backdrop.classList.remove('hidden');
+      setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+      drawer.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      drawer.classList.add('translate-x-full');
+      backdrop.classList.add('opacity-0');
+      setTimeout(() => {
+        backdrop.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    if (openBtn && closeBtn && drawer && backdrop) {
+      openBtn.addEventListener('click', openNav);
+      closeBtn.addEventListener('click', closeNav);
+      backdrop.addEventListener('click', closeNav);
+    }
+  </script>
+</body></html>
